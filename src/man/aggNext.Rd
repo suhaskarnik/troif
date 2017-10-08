@@ -4,7 +4,7 @@
 \alias{aggNext}
 \title{Executes Aggregate functions on the next N records, similar to SQL Window functions}
 \usage{
-aggNext(vec, by = 1, aggfun, ignoreNA = TRUE)
+aggNext(vec, by = 1, aggfun, ignoreNA = TRUE, includeCurrent = FALSE)
 }
 \arguments{
 \item{vec}{vector to aggregate}
@@ -14,6 +14,8 @@ aggNext(vec, by = 1, aggfun, ignoreNA = TRUE)
 \item{aggfun}{the aggregate function. max, min, mean are all possible values}
 
 \item{ignoreNA}{optional boolean. True by default. Set to FALSE if you do NOT want results when the window is less than "by" at the edges of your vector}
+
+\item{includeCurrent}{optional boolean, FALSE by default. Set to TRUE if you want to include the current row in the calculations}
 }
 \value{
 a vector containing the leading aggregate

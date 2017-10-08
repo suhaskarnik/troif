@@ -4,7 +4,8 @@
 \alias{rollAgg}
 \title{Generic function to perform leading or lagged Aggregate functions}
 \usage{
-rollAgg(vec, by = 1, aggfun, ignoreNA = TRUE, roller = dplyr::lag)
+rollAgg(vec, by = 1, aggfun, ignoreNA = TRUE, roller = dplyr::lag,
+  includeCurrent = FALSE)
 }
 \arguments{
 \item{vec}{vector to aggregate}
@@ -16,6 +17,8 @@ rollAgg(vec, by = 1, aggfun, ignoreNA = TRUE, roller = dplyr::lag)
 \item{ignoreNA}{optional boolean. True by default. Set to FALSE if you do NOT want results when the window is less than "by" at the edges of your vector}
 
 \item{roller}{A function that produces the lagged or leading value. Set to dplyr::lag by default}
+
+\item{includeCurrent}{optional boolean, FALSE by default. Set to TRUE if you want to include the current row in the calculations}
 }
 \value{
 a vector containing the lagged aggregate
